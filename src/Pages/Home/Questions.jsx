@@ -53,7 +53,7 @@ const Questions = () => {
       }}
     >
       <div>
-        <p className="header-40 font-bold pt-20 text-center">
+        <p className="header-40 font-PoppinsMedium pt-20 text-center">
           Frequently Asked Questions
         </p>
       </div>
