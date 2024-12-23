@@ -8,7 +8,7 @@ const SampleTwo = () => {
         </div>
 
         <Image
-          src="https://res.cloudinary.com/dax11nwlt/image/upload/v1734788934/samples/sheep.jpg"
+          src="https://res.cloudinary.com/dax11nwlt/image/upload/v1734788755/samples/people/smiling-man.jpg"
           alt="Space Port Background"
           height="100vh"
           fixed

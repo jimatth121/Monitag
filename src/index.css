@@ -6,6 +6,23 @@ html {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: "PoppinsLight";
+  src: url("/public/fonts/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: "PoppinsMedium";
+  src: url("/public/fonts/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url("/public/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "PoppinsSemiBold";
+  src: url("/public/fonts/Poppins-SemiBold.ttf");
+}
+
 .jarallax {
   position: relative;
   z-index: 0;
@@ -27,4 +44,20 @@ html {
 
 .header-1 {
   font-size: clamp(1.75rem, 0.9545rem + 2.8283vw, 3.5rem) !important;
+}
+
+.text-20 {
+  font-size: clamp(0.875rem, 0.7045rem + 0.6061vw, 1.25rem) !important;
+}
+
+.header-40 {
+  font-size: clamp(1.5rem, 1.0455rem + 1.6162vw, 2.5rem) !important;
+}
+
+.m_eae68602:where([data-active]) {
+  background-color: #0489f9 !important;
+}
+
+.text1 {
+  font-size: clamp(0.875rem, 0.8182rem + 0.202vw, 1rem) !important;
 }

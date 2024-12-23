@@ -69,13 +69,13 @@
   left: 0;
   width: 0;
   height: 5px;
-  background-color: #007bff;
+  /* background-color: #007bff; */
   transition: width 0.3s ease-in-out;
 }
 
 .linkActive {
   color: white;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .linkActive::after {
@@ -98,13 +98,13 @@
   left: 0;
   width: 0;
   height: 5px;
-  background-color: #007bff;
+  /* background-color: #007bff; */
   transition: width 0.3s ease-in-out;
 }
 
 .linkActive2 {
   color: black;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .linkActive2::after {

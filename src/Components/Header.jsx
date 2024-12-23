@@ -29,36 +29,36 @@ export function Header() {
           <Group h="100%" gap={50} visibleFrom="sm" className="text-white">
             {/* Use NavLink for navigation buttons */}
             <NavLink
-              to="aboutus"
+              to="/"
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link} ${classes.linkActive}  font-PoppinsSemiBold `
                   : classes.link
               }
             >
-              ABOUT US
+              Monitag and You
             </NavLink>
 
             <NavLink
-              to="news"
+              to="/"
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link} ${classes.linkActive}  font-PoppinsSemiBold `
                   : classes.link
               }
             >
-              NEWS & RESOURCES
+              How we Help
             </NavLink>
 
             <NavLink
-              to="careers"
+              to="/"
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link} ${classes.linkActive}  font-PoppinsSemiBold `
                   : classes.link
               }
             >
-              CAREERS
+              The Monitag Story
             </NavLink>
           </Group>
 

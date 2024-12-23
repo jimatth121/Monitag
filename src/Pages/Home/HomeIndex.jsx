@@ -3,19 +3,30 @@
 // import BannerThree from "./BannerThree";
 // import BannerTwo from "./BannerTwo";
 
-import SampleOne from "./SampleOne";
-import SampleTwo from "./SampleTwo";
+import BannerFive from "./BannerFive";
+import BannerFour from "./BannerFour";
+import BannerOne from "./BannerOne";
+import BannerSix from "./BannerSix";
+import BannerThree from "./BannerThree";
+import BannerSeven from "./BannerSeven";
+import Reviews from "./Reviews";
+import Questions from "./Questions";
+import BannerTwo2 from "./BannerTwo2";
+import QrCode from "./QrCode";
 
 const HomeIndex = () => {
   return (
     <div>
-      {/* <Banner01 />
-      <BannerTwo />
+      <BannerOne />
+      <BannerTwo2 />
       <BannerThree />
-      <BannerFour /> */}
-
-      <SampleOne />
-      <SampleTwo />
+      <BannerFour />
+      <BannerFive />
+      <BannerSix />
+      <BannerSeven />
+      <Reviews />
+      <Questions />
+      <QrCode />
     </div>
   );
 };
