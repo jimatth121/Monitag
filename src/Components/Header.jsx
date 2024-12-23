@@ -1,18 +1,19 @@
 import { Box, Burger, Drawer, Group, ScrollArea } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./Header.module.css";
-import { NavLink, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
+// import { useEffect } from "react";
 
 export function Header() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   // const navigate = useNavigate();
-  const location = useLocation();
-  useEffect(() => {
-    // Scroll to the top whenever the path changes
-    window.scrollTo({ top: 0 });
-  }, [location]);
+
+  const scrollToDiv = (id) => {
+    const element = document.getElementById(id);
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <Box className=" text-white lg:px-32 py-3 fixed z-50 w-full">
       <header className={classes.header}>
@@ -28,8 +29,9 @@ export function Header() {
 
           <Group h="100%" gap={50} visibleFrom="sm" className="text-white">
             {/* Use NavLink for navigation buttons */}
+
             <NavLink
-              to="/"
+              onClick={() => scrollToDiv("banner")}
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link} ${classes.linkActive}  font-PoppinsSemiBold `
@@ -40,7 +42,7 @@ export function Header() {
             </NavLink>
 
             <NavLink
-              to="/"
+              onClick={() => scrollToDiv("questions")}
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link} ${classes.linkActive}  font-PoppinsSemiBold `
@@ -51,7 +53,7 @@ export function Header() {
             </NavLink>
 
             <NavLink
-              to="/"
+              to="https://monitag-technologies-dev.vercel.app/"
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link} ${classes.linkActive}  font-PoppinsSemiBold `
@@ -96,7 +98,10 @@ export function Header() {
           <div className="flex flex-col gap-10 mt-10">
             <NavLink
               to="/"
-              onClick={closeDrawer}
+              onClick={() => {
+                closeDrawer();
+                scrollToDiv("banner");
+              }}
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link2} ${classes.linkActive2}`
@@ -106,8 +111,10 @@ export function Header() {
               Monitag and You
             </NavLink>
             <NavLink
-              to="/"
-              onClick={closeDrawer}
+              onClick={() => {
+                closeDrawer();
+                scrollToDiv("questions");
+              }}
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link2} ${classes.linkActive2}`
@@ -118,7 +125,7 @@ export function Header() {
             </NavLink>
 
             <NavLink
-              to="/"
+              to="https://monitag-technologies-dev.vercel.app/"
               onClick={closeDrawer}
               className={({ isActive }) =>
                 isActive

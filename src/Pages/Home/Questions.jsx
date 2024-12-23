@@ -44,6 +44,7 @@ const Questions = () => {
 
   return (
     <div
+      id="questions"
       className="border-t-[1px] border-b-[1px] border-[#73777a]"
       style={{
         backgroundImage:

@@ -3,7 +3,7 @@ import Apple from "../../assets/applestore.png";
 import Playstore from "../../assets/playstore.png";
 const BannerOne = () => {
   return (
-    <div>
+    <div id="banner">
       <div className="relative">
         <div className=" px-5 mt-24 md:px-0 absolute inset-0 flex md:items-center md:ml-[150px] z-50">
           <div className="max-w-[356px] w-full ">
