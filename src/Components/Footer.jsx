@@ -62,7 +62,7 @@ const Footer = () => {
             </div>
           </div>
           <hr className="my-3" />
-          <div className="flex flex-col md:flex-row md:justify-between items-center mt-10">
+          <div className="flex flex-col md:flex-row md:justify-between gap-2 items-center mt-10">
             <div className=" flex justify-center items-center gap-2 lg:gap-5">
               <img src={Twitter} alt="icon" />
               <img src={LinkedIn} alt="icon" />
@@ -71,7 +71,7 @@ const Footer = () => {
               <img src={Tiktok} alt="icon" />
               <img src={Threads} alt="icon" />
             </div>
-            <p className="text-[14px]">©2024 Monitag Technologies.</p>
+            <p className="text1 text-[#979797]">©2024 Monitag Technologies.</p>
           </div>
         </div>
       </div>

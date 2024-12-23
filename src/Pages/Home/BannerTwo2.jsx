@@ -19,14 +19,16 @@ const BannerTwo2 = () => {
   return (
     <div>
       <div className="relative  ">
-        <div className=" z-50 absolute  left-[5%] top-[13%] md:top-[20%] header-1  text-white header-40">
+        <div className=" z-50 absolute font-PoppinsMedium left-[5%] top-[13%] md:top-[20%] header-1  text-white header-40">
           Monitag and You
         </div>
-        <div className="  md:px-28  w-full absolute   z-50  zindexmat left-0 right-0 top-[20%]  md:top-[75%] flex flex-col gap-4 md:flex-row justify-between  md:items-center  text-white  ">
+        <div className="  md:px-28  w-full absolute   z-50   left-0 right-0 top-[20%]  md:top-[75%] flex flex-col gap-4 md:flex-row justify-between  md:items-center  text-white  ">
           {data.map((item, index) => (
             <div key={index} className=" mx-5">
-              <p className="text-1 font-bold">{item.title}</p>
-              <p className="text1">{item.body}</p>
+              <p className="text-1 font-PoppinsRegular  font-bold">
+                {item.title}
+              </p>
+              <p className="text1 font-PoppinsLight">{item.body}</p>
             </div>
           ))}
           <div className=" px-6">

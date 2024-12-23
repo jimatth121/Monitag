@@ -4,35 +4,33 @@ import { FaRegArrowAltCircleRight } from "react-icons/fa";
 const Questions = () => {
   const data = [
     {
-      label: "How does the Social Payments feature work?",
+      label: "How do I send money on Monitag?",
       content:
-        "It allows you to send money directly to your contacts on social media—no account details needed.",
+        "You can send money easily through standard, confidential or Monitag payments.",
+    },
+    {
+      label: "How does the social payments feature work?",
+      content:
+        "The Social Payments feature allows you to send money directly to your contacts on social media—no account details needed.",
     },
     {
       label: "Are there any fees for transactions?",
-      content: "No, there are no fees for transactions.",
-    },
-    {
-      label: "How can I make confidential payments?",
       content:
-        "You can make confidential payments by selecting the confidential option during the transaction.",
+        "Transaction fees vary based on the type of transaction being performed.",
     },
     {
-      label: "What’s the interest rate on Monitag savings?",
-      content: "The interest rate on Monitag savings is 3.5% per annum.",
+      label: "Can I make confidential payments?",
+      content: "Yes, you can make confidential payments via the app.",
     },
     {
-      label: "What’s the interest rate on Monitag savings account?",
-      content: "The interest rate on Monitag savings is 3.5% per annum.",
-    },
-    {
-      label: "What’s the interest rate on Monitag current account?",
-      content: "The interest rate on Monitag savings is 3.5% per annum.",
+      label: "How can I start growing my savings?",
+      content:
+        "You can choose to start saving individually, in groups, or through regular group contributions (ajo).",
     },
   ];
 
   const items = data.map((item) => (
-    <Accordion.Item value={item.label} key={item.label} className="  md:py-4">
+    <Accordion.Item value={item.label} key={item.label} className=" py-4">
       <Accordion.Control>
         <Text size="lg">{item.label}</Text>
       </Accordion.Control>
@@ -51,7 +49,7 @@ const Questions = () => {
           "url('https://res.cloudinary.com/dax11nwlt/image/upload/v1734868194/samples/chair.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "900px",
+        height: "800px",
       }}
     >
       <div>
@@ -61,9 +59,7 @@ const Questions = () => {
       </div>
 
       <div className="max-w-[800px] mx-auto mt-10 px-3">
-        <Accordion variant="contained" defaultValue={data[0].label}>
-          {items}
-        </Accordion>
+        <Accordion variant="contained">{items}</Accordion>
       </div>
 
       <div className="mt-10">

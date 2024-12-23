@@ -15,13 +15,13 @@ export function Header() {
   };
 
   return (
-    <Box className=" text-white lg:px-32 py-3 fixed z-50 w-full">
+    <Box className=" bg-[rgba(0,0,0,0.4)] backdrop-blur-md text-white lg:px-32 py-3 fixed z-[1000] w-full">
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <NavLink to={"/"}>
             <img
               // onClick={() => handleNavigation("/")}
-              src="https://res.cloudinary.com/dax11nwlt/image/upload/v1734438614/cld-sample-4.png"
+              src="https://res.cloudinary.com/dax11nwlt/image/upload/v1734984661/mymonitaglogo_ealmcc.png"
               alt="logo"
               className="logo-width cursor-pointer"
             />
@@ -34,8 +34,8 @@ export function Header() {
               onClick={() => scrollToDiv("banner")}
               className={({ isActive }) =>
                 isActive
-                  ? `${classes.link} ${classes.linkActive}  font-PoppinsSemiBold `
-                  : classes.link
+                  ? `${classes.link} ${classes.linkActive}   `
+                  : `${classes.link}  font-PoppinsLight`
               }
             >
               Monitag and You
@@ -45,8 +45,8 @@ export function Header() {
               onClick={() => scrollToDiv("questions")}
               className={({ isActive }) =>
                 isActive
-                  ? `${classes.link} ${classes.linkActive}  font-PoppinsSemiBold `
-                  : classes.link
+                  ? `${classes.link} ${classes.linkActive}   `
+                  : `${classes.link}  font-PoppinsLight`
               }
             >
               How we Help
@@ -56,8 +56,8 @@ export function Header() {
               to="https://monitag-technologies-dev.vercel.app/"
               className={({ isActive }) =>
                 isActive
-                  ? `${classes.link} ${classes.linkActive}  font-PoppinsSemiBold `
-                  : classes.link
+                  ? `${classes.link} ${classes.linkActive}   `
+                  : `${classes.link}  font-PoppinsLight`
               }
             >
               The Monitag Story
@@ -105,7 +105,7 @@ export function Header() {
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link2} ${classes.linkActive2}`
-                  : classes.link2
+                  : `${classes.link2}  font-PoppinsLight`
               }
             >
               Monitag and You
@@ -118,7 +118,7 @@ export function Header() {
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link2} ${classes.linkActive2}`
-                  : classes.link2
+                  : `${classes.link2}  font-PoppinsLight`
               }
             >
               How we Help
@@ -130,7 +130,7 @@ export function Header() {
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link2} ${classes.linkActive2}`
-                  : classes.link2
+                  : `${classes.link2}  font-PoppinsLight`
               }
             >
               The Monitag Story

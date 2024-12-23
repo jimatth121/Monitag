@@ -5,12 +5,12 @@ const BannerOne = () => {
   return (
     <div id="banner">
       <div className="relative">
-        <div className=" px-5 mt-24 md:px-0 absolute inset-0 flex md:items-center md:ml-[150px] z-50">
+        <div className=" px-5  mt-40 md:px-0 absolute inset-0 flex md:items-center md:ml-[150px] z-50">
           <div className="max-w-[356px] w-full ">
-            <p className="header-1 md:leading-[60px] text-white">
+            <p className="header-56 leading-8 md:leading-[60px] text-white  font-PoppinsMedium">
               Your Money <br /> Your Way
             </p>
-            <p className="mt-5 text-white text-[18px] md:leading-[30px] text-20">
+            <p className="mt-5 text-white  md:leading-[30px] text-20 font-PoppinsLight">
               Make social payments, choose standard or confidential transfers,
               grow your savings and purchase e-Vouchers.
             </p>

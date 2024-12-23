@@ -5,13 +5,13 @@ const BannerFive = () => {
   return (
     <div>
       <div className="relative">
-        <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[8%] md:top-[60%] md:left-[65%]  items-end">
+        <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[60%] md:left-[65%]  items-end">
           <div className="max-w-[556px] w-full   p-5   ">
-            <p className="header-1 leading-9 md:leading-[60px] text-white">
+            <p className="header-40 leading-9 md:leading-[60px] text-white font-PoppinsMedium">
               Purchase eVouchers <br />
               and Gift Cards.
             </p>
-            <p className=" text-white text-[18px] mt-2 md:leading-[30px] text-20">
+            <p className=" text-white text-[18px] mt-2 md:leading-[30px] text-20 font-PoppinsLight">
               Purchase gift cards and eVouchers instantly for yourself or
               others.
             </p>
