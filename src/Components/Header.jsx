@@ -103,10 +103,10 @@ export function Header() {
                   : classes.link2
               }
             >
-              Home
+              Monitag and You
             </NavLink>
             <NavLink
-              to="aboutus"
+              to="/"
               onClick={closeDrawer}
               className={({ isActive }) =>
                 isActive
@@ -114,23 +114,11 @@ export function Header() {
                   : classes.link2
               }
             >
-              ABOUT US
-            </NavLink>
-
-            <NavLink
-              to="news"
-              onClick={closeDrawer}
-              className={({ isActive }) =>
-                isActive
-                  ? `${classes.link2} ${classes.linkActive2}`
-                  : classes.link2
-              }
-            >
-              NEWS & RESOURCES
+              How we Help
             </NavLink>
 
             <NavLink
-              to="careers"
+              to="/"
               onClick={closeDrawer}
               className={({ isActive }) =>
                 isActive
@@ -138,7 +126,7 @@ export function Header() {
                   : classes.link2
               }
             >
-              CAREERS
+              The Monitag Story
             </NavLink>
           </div>
 
