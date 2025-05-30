@@ -1,11 +1,41 @@
+import { useState, useEffect } from "react";
 import { Image } from "../../Components/Image";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 const BannerSix = () => {
+  
+  const [bgImage, setBgImage] = useState("");
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth >= 768) {
+        // md and above
+        setBgImage("url('https://res.cloudinary.com/dax11nwlt/image/upload/v1734823441/samples/ecommerce/shoes.jpg')");
+      } else {
+        // small screens
+        setBgImage("url('https://res.cloudinary.com/dax11nwlt/image/upload/v1734823570/samples/food/dessert.jpg')");
+      }
+    };
+
+    handleResize(); // call initially
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div>
       <div className="relative">
-        <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[60%] md:left-[10%]  items-end">
+      <div
+      style={{
+        backgroundImage: bgImage,
+        backgroundSize: "cover",
+        backgroundPosition: "top",
+        width: "100%",
+        height: "100vh",
+      }} className="    md:px-0 absolute inset-0 flex md:items-center  z-50"
+      >
+      <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[60%] md:left-[10%]  items-end">
           <div className="max-w-[606px] w-full   p-5   ">
             <p className="header-40 md:leading-[60px] text-white font-PoppinsMedium">
               Get Debit Cards
@@ -20,18 +50,21 @@ const BannerSix = () => {
             </button>
           </div>
         </div>
+      </div>
+
+       
         <Image
-          src="https://res.cloudinary.com/dax11nwlt/image/upload/v1734823570/samples/food/dessert.jpg"
+          src="https://res.cloudinary.com/dax11nwlt/image/upload/v1748551060/Get_Debit_Cards_b1w2zg.png"
           alt="Space Port Background"
-          height="100vh"
+          height="130vh"
           fixed
           darken
           className=" block md:hidden"
         ></Image>
         <Image
-          src="https://res.cloudinary.com/dax11nwlt/image/upload/v1734823441/samples/ecommerce/shoes.jpg"
+          src="https://res.cloudinary.com/dax11nwlt/image/upload/v1748551060/Get_Debit_Cards_b1w2zg.png"
           alt="Space Port Background"
-          height="100vh"
+          height="130vh"
           fixed
           darken
           className="hidden md:block"
