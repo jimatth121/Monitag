@@ -34,7 +34,7 @@ const BannerFour = () => {
         backgroundSize: "cover",
         backgroundPosition: "top",
         width: "100%",
-        height: "100vh",
+        height: "120vh",
       }} className="    md:px-0 absolute inset-0 flex md:items-center  z-50"
       >
       <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[60%] md:left-[10%]  items-end">
@@ -45,7 +45,7 @@ const BannerFour = () => {
             <p className=" text-white text-[18px] md:leading-[30px] text-20 font-PoppinsLight">
               Send money to anyone through social media.
             </p>
-            <button className="mt-5 py-2 md:py-3 px-4 md:px-6 border-white border-[1px] rounded-3xl flex items-center text-white gap-3">
+            <button className="mt-5 py-2 bg-[rgba(255,255,255,0.4)] md:py-3 px-4 md:px-6 border-white border-[1px] rounded-3xl flex items-center text-white gap-3">
               Get the app now
               <FaRegArrowAltCircleRight color="white" />
             </button>
@@ -57,7 +57,7 @@ const BannerFour = () => {
         <Image
           src="https://res.cloudinary.com/dax11nwlt/image/upload/v1748551026/Make_Social_Payments_x1sv8s.png"
           alt="Space Port Background"
-          height="130vh"
+          height="170vh"
           fixed
           darken
           className=" block md:hidden"
@@ -65,7 +65,7 @@ const BannerFour = () => {
         <Image
           src="https://res.cloudinary.com/dax11nwlt/image/upload/v1748551026/Make_Social_Payments_x1sv8s.png"
           alt="Space Port Background"
-          height="130vh"
+          height="170vh"
           fixed
           darken
           className="hidden md:block"

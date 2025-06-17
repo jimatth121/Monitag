@@ -1,7 +1,7 @@
 import { Box, Burger, Drawer, Group, ScrollArea } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./Header.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 // import { useEffect } from "react";
 
 export function Header() {
@@ -13,21 +13,25 @@ export function Header() {
     const element = document.getElementById(id);
     element.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+const navigate = useNavigate();
+function openInNewTab(url) {
+  window.open(url, '_blank');
+}
 
   return (
-    <Box className=" bg-[rgba(0,0,0,0.4)] backdrop-blur-md text-white lg:px-32 md:py-3 fixed z-[1000] w-full">
+    <Box className=" bg-[rgba(255,255,255,0.6)] backdrop-blur-md text-white lg:px-32 md:py-3 fixed z-[1000] w-full">
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <NavLink to={"/"}>
             <img
-              // onClick={() => handleNavigation("/")}
-              src="https://res.cloudinary.com/dax11nwlt/image/upload/v1734984661/mymonitaglogo_ealmcc.png"
+              onClick={() => navigate("/")}
+              src="https://res.cloudinary.com/dax11nwlt/image/upload/v1737296048/monitagcolorlogo_oqikga.png"
               alt="logo"
               className="logo-width cursor-pointer"
             />
           </NavLink>
 
-          <Group h="100%" gap={50} visibleFrom="sm" className="text-white">
+          <Group h="100%" gap={50} visibleFrom="sm" >
             {/* Use NavLink for navigation buttons */}
 
             <NavLink
@@ -49,24 +53,24 @@ export function Header() {
                   : `${classes.link}  font-PoppinsLight`
               }
             >
-              How we Help
+              Why Monitag
             </NavLink>
 
             <NavLink
-              to="https://monitag-technologies-dev.vercel.app/"
+              onClick={openInNewTab("https://monitag-technologies-dev.vercel.app/")}
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link} ${classes.linkActive}   `
-                  : `${classes.link}  font-PoppinsLight`
+                  : `${classes.link}  font-PoppinsLight text-[14px] tracking-wide`
               }
             >
               The Monitag Story
             </NavLink>
           </Group>
 
-          <button className=" hidden md:block py-3 px-6 border-white border-[1px] rounded-3xl">
+          {/* <button className=" hidden md:block py-3 px-6 border-white border-[1px] rounded-3xl">
             Create Account
-          </button>
+          </button> */}
 
           <Burger
             opened={drawerOpened}

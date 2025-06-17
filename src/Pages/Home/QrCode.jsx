@@ -3,10 +3,10 @@ import QRCodeNotice from "../../assets/qrcodenotice.jpg";
 
 const QrCode = () => {
   return (
-    <div className="hidden md:block">
-      <div className="flex justify-center items-center gap-32 py-24 px-14">
-        <img src={QRCodeNotice} alt="qrcode" />
-        <img src={QRCode} alt="qrcode" />
+    <div className="hidden md:block px-10">
+      <div className="flex justify-center items-center gap-8  py-20 max-w-[1200px] mx-auto px-10 ">
+        <img src={QRCodeNotice} alt="qrcode" className="  h-[370px]  " />
+        <img src={QRCode} alt="qrcode" className=" w-[400px] h-[370px] " />
       </div>
     </div>
   );

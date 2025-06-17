@@ -33,12 +33,12 @@ const BannerFive = () => {
         backgroundSize: "cover",
         backgroundPosition: "top",
         width: "100%",
-        height: "100vh",
+        height: "120vh",
       }} className="    md:px-0 absolute inset-0 flex md:items-center  z-50"
       >
-      <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[60%] md:left-[65%]  items-end">
+      <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[50%] md:left-[65%]  items-end">
           <div className="max-w-[556px] w-full   p-5   ">
-            <p className="header-40 leading-9 md:leading-[60px] text-white font-PoppinsMedium">
+            <p className="header-40 leading-9 md:leading-[40px] text-white font-PoppinsMedium">
               Purchase eVouchers <br />
               and Gift Cards.
             </p>
@@ -46,7 +46,7 @@ const BannerFive = () => {
               Purchase gift cards and eVouchers instantly for yourself or
               others.
             </p>
-            <button className="mt-5 py-2 md:py-3 px-4 md:px-6 border-white border-[1px] rounded-3xl flex items-center text-white gap-3">
+            <button className="mt-5 py-2 bg-[rgba(255,255,255,0.4)] md:py-3 px-4 md:px-6 border-white border-[1px] rounded-3xl flex items-center text-white gap-3">
               Get the app now
               <FaRegArrowAltCircleRight color="white" />
             </button>
@@ -58,7 +58,7 @@ const BannerFive = () => {
         <Image
           src="https://res.cloudinary.com/dax11nwlt/image/upload/v1748551055/Gift_Cards_xzbldu.png"
           alt="Space Port Background"
-          height="130vh"
+          height="170vh"
           fixed
           darken
           className=" block md:hidden"
@@ -66,7 +66,7 @@ const BannerFive = () => {
         <Image
           src="https://res.cloudinary.com/dax11nwlt/image/upload/v1748551055/Gift_Cards_xzbldu.png"
           alt="Space Port Background"
-          height="130vh"
+          height="170vh"
           fixed
           darken
           className="hidden md:block"

@@ -14,17 +14,17 @@ import { useNavigate } from "react-router-dom";
 const Footer = () => {
   const navigate = useNavigate();
   return (
-    <div className="  pt-14 font-PoppinsRegular text-[#979797]">
+    <div className="   pt-14 font-PoppinsRegular text-[#979797]">
       <div className="px-5 md:px-0 ">
-        <div className=" text-black py-8  md:px-64">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_200px_250px_470px] gap-5 md:gap-10 pb-10">
+        <div className=" text-black py-8  md:px-20 mx-auto ">
+          <div className="grid grid-cols-1 md:grid-cols-[150px_150px_1fr_500px] gap-5 md:gap-10 pb-10 ">
             <div>
-              <img src={Logo} alt="" />
+              <img src={Logo} alt="" className="w-[100px]" />
             </div>
             <div>
               <p className="text-1 font-bold text-[#008cff]">RESOURCES</p>
-              <p className="mt-2 text-[#979797] md:mt-3 ">About</p>
-              <p className="mt-2 text-[#979797] md:mt-3">FAQs</p>
+              {/* <p className="mt-2 text-[#979797] md:mt-3 ">About</p> */}
+              {/* <p className="mt-2 text-[#979797] md:mt-3">FAQs</p> */}
               <p
                 onClick={() => navigate("privacypolicy")}
                 className="mt-2 text-[#979797] md:mt-3 cursor-pointer"

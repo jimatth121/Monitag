@@ -11,9 +11,10 @@
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
   text-decoration: none;
-  color: white;
-  font-weight: 500;
-  font-size: var(--mantine-font-size-sm);
+  color: #007bff;
+  font-weight: 900;
+  /* font-size: var(--mantine-font-size-sm); */
+  font-size: 14px !important;
 
   /* @media (max-width: $mantine-breakpoint-sm) {
     height: 42px;
@@ -58,8 +59,9 @@
   position: relative;
   padding-bottom: 5px;
   text-decoration: none;
-  color: white;
+  /* color: #007bff; */
   transition: color 0.3s;
+
 }
 
 .link::after {
@@ -74,8 +76,9 @@
 }
 
 .linkActive {
-  color: white;
-  /* font-weight: bold; */
+  /* color: #007bff; */
+  font-weight: 500;
+
 }
 
 .linkActive::after {
@@ -89,6 +92,8 @@
   color: black;
   transition: color 0.3s;
   padding-left: 20px;
+  font-weight: 500;
+
 }
 
 .link2::after {
@@ -104,7 +109,7 @@
 
 .linkActive2 {
   color: black;
-  /* font-weight: bold; */
+  font-weight: 500;
 }
 
 .linkActive2::after {

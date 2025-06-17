@@ -35,7 +35,7 @@ const Reviews = () => {
 
       <div className="mt-16 md:px-48  md:ml-28">
         <Carousel
-          withIndicators
+          withIndicators={false}
           height={300}
           slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
           slideGap={{ base: 0, sm: "md" }}

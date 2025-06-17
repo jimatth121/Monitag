@@ -31,10 +31,10 @@ const BannerOne = () => {
     backgroundSize: "cover",
     backgroundPosition: "top",
     width: "100%",
-    height: "100vh",
+    height: "120vh",
   }} className="    md:px-0 absolute inset-0 flex md:items-center  z-50">
     <div className="left-[1%] top-[12%] md:top-[70%] md:left-[65%] w-full h-full flex justify-start px-4 md:px-40 items-center  p-5 md:p-0">
-    <div className="max-w-[356px] w-full">
+    <div className="max-w-[400px] w-full">
             <p className="header-56 leading-8 md:leading-[60px] text-white  font-PoppinsMedium">
               Your Money <br /> Your Way
             </p>
@@ -59,7 +59,7 @@ const BannerOne = () => {
         <Image
           src="https://res.cloudinary.com/dax11nwlt/image/upload/v1748551008/Send_Money_dlavde.png"
           alt="Space Port Background"
-          height="130vh"
+          height="170vh"
           fixed
           darken
           className=" block md:hidden"
@@ -67,7 +67,7 @@ const BannerOne = () => {
         <Image
           src="https://res.cloudinary.com/dax11nwlt/image/upload/v1748551008/Send_Money_dlavde.png"
           alt="Space Port Background"
-          height="130vh"
+          height="170vh"
           fixed
           darken
           className="hidden md:block"
