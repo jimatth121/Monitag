@@ -4,23 +4,23 @@ import { FaRegArrowAltCircleRight } from "react-icons/fa";
 const Questions = () => {
   const data = [
     {
-      label: "How do I send money on Monitag?",
+      label: "What do I need to open a Monitag account?",
       content:
-        "You can send money easily through standard, confidential or Monitag payments.",
+        "To open a Monitag account, you need your phone number, email address, and your Bank Verification Number.",
     },
     {
-      label: "How does the social payments feature work?",
+      label: "What sort of transactions can I perform with the Monitag app?",
       content:
-        "The Social Payments feature allows you to send money directly to your contacts on social media—no account details needed.",
-    },
-    {
-      label: "Are there any fees for transactions?",
-      content:
-        "Transaction fees vary based on the type of transaction being performed.",
+        "With the Monitag app, you can save, pay bills, send money to other Monitag users, other banks or to contacts on social media, make payments and purchase gift cards & eVouchers.",
     },
     {
       label: "Can I make confidential payments?",
-      content: "Yes, you can make confidential payments via the app.",
+      content:
+        "The Monitag app helps you to make confidential payments to contacts on social media. This feature ensures that your name and payment details stay private always.",
+    },
+    {
+      label: "How does the Social Payments feature work?",
+      content: "The Social Payments feature allows you to send money directly to your contacts on social media—no account details needed.",
     },
     {
       label: "How can I start growing my savings?",
@@ -64,9 +64,8 @@ const Questions = () => {
 
       <div className="mt-10">
         <p className="text-center text-20 font-bold">Got more questions?</p>
-        <p className="text-1 text-center flex justify-center items-center gap-2">
-          Chat with our support team <FaRegArrowAltCircleRight color="gray" />
-        </p>
+      
+        <a className="text-1 text-center flex justify-center items-center gap-2" href="mailto:info@monitagtechnologies.com">Send Email to our support team <FaRegArrowAltCircleRight color="gray" /> </a>
       </div>
     </div>
   );

@@ -5,12 +5,14 @@ import HomeIndex from "./Pages/Home/HomeIndex";
 import Footer from "./Components/Footer";
 import Privacypolicy from "./Pages/Privacypolicy/Privacypolicy";
 import TermsConditions from "./Pages/TermsConditions/TermsConditions";
+import ScrollToTop from "./Components/ScrollToTop";
 // import HomeIndex from "./Pages/Home/HomeIndex";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop />
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<HomeIndex />}></Route>

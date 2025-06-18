@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate();
+
   return (
     <div className="   pt-14 font-PoppinsRegular text-[#979797]">
       <div className="px-5 md:px-0 ">
@@ -26,7 +27,9 @@ const Footer = () => {
               {/* <p className="mt-2 text-[#979797] md:mt-3 ">About</p> */}
               {/* <p className="mt-2 text-[#979797] md:mt-3">FAQs</p> */}
               <p
-                onClick={() => navigate("privacypolicy")}
+                onClick={() => {
+                  navigate("privacypolicy");
+                }}
                 className="mt-2 text-[#979797] md:mt-3 cursor-pointer"
               >
                 Privacy policy
@@ -42,7 +45,7 @@ const Footer = () => {
               <p className="text-1 font-bold text-[#008cff]">SUPPORT</p>
               <p className="mt-2 text-[#979797] md:mt-3">+234 700 933 9339</p>
               <p className="mt-2 text-[#979797] md:mt-3">
-                help@monitagtechnologies.com
+                info@monitagtechnologies.com
               </p>
             </div>
             <div className="">

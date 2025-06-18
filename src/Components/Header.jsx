@@ -5,8 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 // import { useEffect } from "react";
 
 export function Header() {
-  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
-    useDisclosure(false);
+  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =useDisclosure(false);
   // const navigate = useNavigate();
 
   const scrollToDiv = (id) => {
@@ -35,7 +34,7 @@ function openInNewTab(url) {
             {/* Use NavLink for navigation buttons */}
 
             <NavLink
-              onClick={() => scrollToDiv("banner")}
+              onClick={() => scrollToDiv("monitagAndYou")}
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link} ${classes.linkActive}   `
@@ -57,11 +56,11 @@ function openInNewTab(url) {
             </NavLink>
 
             <NavLink
-              onClick={openInNewTab("https://monitag-technologies-dev.vercel.app/")}
+              onClick={()=>openInNewTab("https://www.monitagtechnologies.com/")}
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link} ${classes.linkActive}   `
-                  : `${classes.link}  font-PoppinsLight text-[14px] tracking-wide`
+                  : `${classes.link}  font-PoppinsLight  tracking-wide`
               }
             >
               The Monitag Story
@@ -76,7 +75,7 @@ function openInNewTab(url) {
             opened={drawerOpened}
             onClick={toggleDrawer}
             hiddenFrom="sm"
-            color="white"
+            color="#008CFF"
           />
         </Group>
       </header>
@@ -101,10 +100,10 @@ function openInNewTab(url) {
           {/* <Divider my="sm" /> */}
           <div className="flex flex-col gap-10 mt-10">
             <NavLink
-              to="/"
+      
               onClick={() => {
                 closeDrawer();
-                scrollToDiv("banner");
+                scrollToDiv("monitagAndYou");
               }}
               className={({ isActive }) =>
                 isActive
@@ -129,8 +128,8 @@ function openInNewTab(url) {
             </NavLink>
 
             <NavLink
-              to="https://monitag-technologies-dev.vercel.app/"
-              onClick={closeDrawer}
+               onClick={()=>openInNewTab("https://www.monitagtechnologies.com/")}
+              // onClick={closeDrawer}
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link2} ${classes.linkActive2}`

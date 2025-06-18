@@ -3,7 +3,9 @@ import { Carousel } from "@mantine/carousel";
 import Slide1 from "../../assets/slide-1.png";
 import Slide2 from "../../assets/slide-2.png";
 import Slide3 from "../../assets/slide-3.png";
+import { useMediaQuery } from '@mantine/hooks';
 const Reviews = () => {
+    const isMobile = useMediaQuery('(max-width: 768px)');
   return (
     <div
       style={{
@@ -35,7 +37,7 @@ const Reviews = () => {
 
       <div className="mt-16 md:px-48  md:ml-28">
         <Carousel
-          withIndicators={false}
+          withIndicators={isMobile}
           height={300}
           slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
           slideGap={{ base: 0, sm: "md" }}
