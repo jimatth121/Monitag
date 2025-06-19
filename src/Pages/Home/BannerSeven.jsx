@@ -30,8 +30,8 @@ const BannerSeven = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const scrollToDiv = (id) => {
-    const element = document.getElementById(id);
+  const scrollToDiv = (href) => {
+    const element = document.querySelector(href);
     element.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   return (
@@ -57,7 +57,7 @@ const BannerSeven = () => {
                 ajo.
               </p>
               <button
-                onClick={() => scrollToDiv("qrCode")}
+                onClick={() => scrollToDiv("#qrCode")}
                 className="mt-5 py-2 bg-[rgba(255,255,255,0.4)] md:py-3 px-4 md:px-6 border-white border-[1px] rounded-3xl flex items-center text-white gap-3"
               >
                 Get the app now

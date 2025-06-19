@@ -31,8 +31,8 @@ const BannerOne = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const scrollToDiv = (id) => {
-    const element = document.getElementById(id);
+    const scrollToDiv = (href) => {
+    const element = document.querySelector(href);
     element.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   return (
@@ -58,7 +58,7 @@ const BannerOne = () => {
                 grow your savings and purchase e-Vouchers.
               </p>
               <button
-                onClick={() => scrollToDiv("qrCode")}
+                onClick={() => scrollToDiv("#qrCode")}
                 className="mt-5 py-2 md:py-3 px-4 md:px-6 border-white border-[1px] rounded-full flex items-center text-[#7049be] bg-white"
               >
                 Download the Monitag app
