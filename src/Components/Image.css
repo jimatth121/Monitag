@@ -17,14 +17,31 @@
 }
 
 .image-behind {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: auto;
   margin: 0;
   padding: 0;
+
+  /* GPU acceleration for iOS */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .image-content {
-  @extend .fill-absolute;
-  @extend .flex-center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
