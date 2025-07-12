@@ -1,5 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
+
+// import { useRect } from '../hooks/useRect';
+import { useOnScroll } from "../hooks/useOnScroll";
+
 import "./Image.css";
 
 export const Image = ({
@@ -15,89 +19,95 @@ export const Image = ({
 }) => {
   const box = useRef(null);
   const img = useRef(null);
-  const [deltaY, setDeltaY] = useState(0);
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [ΔY, setΔY] = useState(0);
 
-  // Force GPU acceleration on image via CSS
-  useEffect(() => {
-    if (img.current) {
-      img.current.style.willChange = "transform";
-      img.current.style.transform = "translateZ(0)";
-      img.current.style.backfaceVisibility = "hidden";
+  // const [boxInitialized, boxRect] = useRect(box);
+  // const [imgInitialized, imgRect] = useRect(img);
+
+  useOnScroll((scrollY, winHeight) => {
+    if (fixed) return;
+    if (!box.current) return;
+    if (!img.current) return;
+    // if (!boxInitialized.current || !box.current || !boxRect.current) return;
+    // if (!imgInitialized.current || !img.current || !imgRect.current) return;
+
+    const boxRect = box.current.getBoundingClientRect();
+
+    const winBottom = scrollY + winHeight;
+    const boxTop = boxRect.top + scrollY;
+    const boxBottom = boxRect.bottom + scrollY;
+    const boxHeight = boxRect.height;
+    const pct =
+      (clampVal(winBottom, boxTop, boxBottom + winHeight) - boxTop) /
+      (boxHeight + winHeight);
+
+    const imgHeight = img.current.offsetHeight;
+    // const imgTop = img.current.getBoundingClientRect().y;
+    // const imgHeight = img.current.innerHeight;
+    // const imgBottom = imgTop + imgHeight;
+
+    if (imgHeight < boxHeight) {
+      console.warn(
+        `parallax effect doesn't work if image is smaller than the bounding box. imgHeight=${imgHeight} boxHeight=${boxHeight}`
+      );
+      return;
     }
-  }, []);
 
-  useEffect(() => {
-    let frameId;
+    // calculate the distance that the image needs to traverse
+    // speed: 2  >> start: -diff*2 end: diff
+    // speed: 1  >> start: -diff   end: 0
+    // speed: 0  >> start: -diff/2 end: -diff/2   <-- image is centered
+    // speed: -1 >> start: 0       end: -diff
+    // speed: -2 >> start: diff    end: -diff*2
+    const diff = imgHeight - boxHeight;
+    const deltaY =
+      // starting offset
+      (0 - diff - diff * speed) * 0.5 +
+      // distance travelled to reach end
+      diff * pct * speed;
 
-    const updateParallax = () => {
-      if (fixed || !box.current || !img.current || !imageLoaded) return;
+    if (clamp) {
+      setΔY(clampVal(deltaY, -diff, 0));
+    } else {
+      setΔY(deltaY);
+    }
 
-      const scrollY = window.scrollY || window.pageYOffset;
-      const winHeight = window.innerHeight;
-      const boxRect = box.current.getBoundingClientRect();
+    // const start = (-diff - diff * speed) / 2;
+    // const distance = diff * pct * speed;
 
-      const boxTop = boxRect.top + scrollY;
-      const boxBottom = boxRect.bottom + scrollY;
-      const boxHeight = boxRect.height;
-      const winBottom = scrollY + winHeight;
+    // if (clamp) {
+    //   setΔY(clampVal(start + distance, -diff, 0));
+    // } else {
+    //   setΔY(start + distance);
+    // }
+    // prettier-ignore
+    // setΔY(speed > 0
+    //   ? clamp(-diff * speed + diff * pct * speed, -diff, 0)
+    //   : clamp(diff * pct * speed, -diff, 0)
+    // );
 
-      const pct =
-        (clampVal(winBottom, boxTop, boxBottom + winHeight) - boxTop) /
-        (boxHeight + winHeight);
+    // img.current.style.transform = `translate(0, ${ΔY}px)`;
 
-      const imgHeight = img.current.offsetHeight;
-
-      if (imgHeight < boxHeight) {
-        if (debug) {
-          console.warn(
-            `Parallax issue: image is smaller than container. imgHeight=${imgHeight}, boxHeight=${boxHeight}`
-          );
-        }
-        return;
-      }
-
-      const diff = imgHeight - boxHeight;
-      const newDeltaY =
-        (0 - diff - diff * speed) * 0.5 + diff * pct * speed;
-
-      const finalDelta = clamp ? clampVal(newDeltaY, -diff, 0) : newDeltaY;
-
-      setDeltaY(finalDelta);
-
-      if (debug) {
-        console.log({
-          scrollY,
-          winBottom,
-          pct,
-          boxHeight,
-          imgHeight,
-          deltaY: finalDelta,
-        });
-      }
-    };
-
-    const onScroll = () => {
-      cancelAnimationFrame(frameId);
-      frameId = requestAnimationFrame(updateParallax);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", updateParallax);
-
-    updateParallax(); // initial call
-
-    return () => {
-      cancelAnimationFrame(frameId);
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", updateParallax);
-    };
-  }, [imageLoaded, fixed, speed, clamp, debug]);
+    // prettier-ignore
+    if (debug) console.log({
+      pct,
+      ΔY,
+      // imgHeight,
+      // boxHeight,
+      // winBottom,
+      // height,
+      // boxTop,
+      // boxBottom,
+      // imgTop,
+      // imgBottom,
+      // 'clamp()': clamp(winBottom, boxTop, boxBottom),
+    });
+  });
 
   return (
     <div
       ref={box}
-      className={`image-box ${className}`}
+      className={`"image-box" ${className}`}
       style={{ height: height || undefined }}
     >
       {fixed ? (
@@ -111,12 +121,11 @@ export const Image = ({
       ) : (
         <img
           ref={img}
+          className="image-behind"
           src={src}
           alt={alt}
-          className="image-behind"
-          onLoad={() => setImageLoaded(true)}
           style={{
-            transform: `translateY(${deltaY}px)`,
+            transform: `translate(0, ${ΔY}px)`,
           }}
         />
       )}

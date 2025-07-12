@@ -13,11 +13,13 @@ import Reviews from "./Reviews";
 import Questions from "./Questions";
 import BannerTwo2 from "./BannerTwo2";
 import QrCode from "./QrCode";
+import Banner1 from "./Banner1";
 
 const HomeIndex = () => {
   return (
     <div>
-      <BannerOne />
+      <Banner1/>
+      {/* <BannerOne /> */}
       <BannerTwo2 />
       <BannerThree />
       <BannerFour />
