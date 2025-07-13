@@ -43,7 +43,7 @@ const BannerFive = () => {
       fixedImage={fixedBg}
       overlay={bgImage} 
       >
-      <div className="    md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[39%] md:left-[60%]  items-end">
+      <div className="    md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[35%] md:left-[60%]  items-end">
             <div className="max-w-[556px] w-full   p-5   ">
               <p className="header-40 leading-9 md:leading-[40px] text-white font-PoppinsMedium">
                 Purchase eVouchers <br />

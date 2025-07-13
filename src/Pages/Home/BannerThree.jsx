@@ -44,7 +44,7 @@ const BannerThree = () => {
       fixedImage={fixedBg}
       overlay={bgImage} 
       >
-       <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[42%] md:left-[70%]  items-end">
+       <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[38%] md:left-[70%]  items-end">
             <div className="max-w-[406px] w-full   p-5   ">
               <p className="header-40 md:leading-[60px] text-white font-PoppinsMedium">
                 Send Money

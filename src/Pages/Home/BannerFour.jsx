@@ -45,7 +45,7 @@ const BannerFour = () => {
       fixedImage={fixedBg}
       overlay={bgImage} 
       >
-      <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[45%] md:left-[10%]  items-end">
+      <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[41%] md:left-[10%]  items-end">
             <div className="max-w-[606px] w-full   p-5   ">
               <p className="header-40 md:leading-[60px] text-white font-PoppinsMedium">
                 Make Social Payments
