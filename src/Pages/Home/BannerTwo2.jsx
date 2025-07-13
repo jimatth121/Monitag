@@ -1,12 +1,10 @@
+
 import { useState, useEffect } from "react";
-import { Image } from "../../Components/Image";
-import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { useMediaQuery } from "@mantine/hooks";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import ParallaxEffect from "../../Components/ParallaxEffect";
 
-const BannerTwo2 = () => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
-
-  const data = [
+const data = [
     {
       title: "Transact Securely",
       body: "Send money regularly or confidentially. You choose!",
@@ -21,7 +19,11 @@ const BannerTwo2 = () => {
     },
   ];
 
+const BannerTwo2 = () => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const [bgImage, setBgImage] = useState("");
+  const fixedBg =
+    "https://res.cloudinary.com/dax11nwlt/image/upload/v1750108017/MONITAG_social_payments_Element_2_1_jwjunt.png";
 
   useEffect(() => {
     const handleResize = () => {
@@ -44,27 +46,19 @@ const BannerTwo2 = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const scrollToDiv = (id) => {
-    const element = document.getElementById(id);
+  const scrollToDiv = (href) => {
+    const element = document.querySelector(href);
     element.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
   return (
-    <div id="monitagAndYou">
-      <div className="relative  ">
-        <div
-          style={{
-            backgroundImage: bgImage,
-            backgroundSize: "cover",
-            backgroundPosition: "top",
-            width: "100%",
-            height: "120vh",
-          }}
-          className="md:px-0 absolute inset-0 flex md:items-center  z-50"
-        >
-          <div className=" z-50 absolute font-PoppinsMedium left-[5%] top-[13%] md:top-[20%] header-1  text-white header-40">
+   <ParallaxEffect overlay={bgImage} fixedImage={fixedBg} id="banner2" >
+    
+        <div id="monitagAndYou" >
+           <div className=" z-50 absolute font-PoppinsMedium left-[5%] top-[13%]  header-1  text-white header-40">
             Monitag and You
           </div>
-          <div className=" md:px-14  w-full absolute   z-50   left-0 right-0 top-[20%]  md:top-[75%] flex flex-col gap-4 md:flex-row justify-between  md:items-center  text-white  ">
+          <div className=" md:px-14  w-full absolute   z-50   left-0 right-0 top-[20%]  md:top-[50%] flex flex-col gap-4 md:flex-row justify-between  md:items-center  text-white  ">
             {data.map((item, index) => (
               <div key={index} className=" mx-5">
                 <p className="text-1 font-PoppinsRegular  font-bold">
@@ -84,25 +78,9 @@ const BannerTwo2 = () => {
             </div>
           </div>
         </div>
-
-        <Image
-          src="https://res.cloudinary.com/dax11nwlt/image/upload/v1750108017/MONITAG_social_payments_Element_2_1_jwjunt.png"
-          alt="Space Port Background"
-          height={isMobile ? "140vh" : "170vh"}
-          fixed
-          darken
-          className="md:hidden"
-        ></Image>
-        <Image
-          src="https://res.cloudinary.com/dax11nwlt/image/upload/v1750108017/MONITAG_social_payments_Element_2_1_jwjunt.png"
-          alt="Space Port Background"
-          height={isMobile ? "140vh" : "170vh"}
-          fixed
-          darken
-          className="hidden md:block"
-        ></Image>
-      </div>
-    </div>
+    
+    </ ParallaxEffect>
+   
   );
 };
 

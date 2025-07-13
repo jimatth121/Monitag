@@ -1,14 +1,17 @@
+
 import { useState, useEffect } from "react";
-import { Image } from "../../Components/Image";
-import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { useMediaQuery } from "@mantine/hooks";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import ParallaxEffect from "../../Components/ParallaxEffect";
+
 
 const BannerSeven = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
-
   const [bgImage, setBgImage] = useState("");
+  const fixedBg =
+    "https://res.cloudinary.com/dax11nwlt/image/upload/v1748551063/Grow_Savings_jnohhe.png";
 
-  useEffect(() => {
+ useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
 
@@ -29,32 +32,24 @@ const BannerSeven = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
   const scrollToDiv = (href) => {
     const element = document.querySelector(href);
     element.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
   return (
-    <div>
-      <div className="relative">
-        <div
-          style={{
-            backgroundImage: bgImage,
-            backgroundSize: "cover",
-            backgroundPosition: "top",
-            width: "100%",
-            height: "120vh",
-          }}
-          className="    md:px-0 absolute inset-0 flex md:items-center  z-50"
-        >
-          <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[55%] md:left-[65%]  items-end">
+   <ParallaxEffect id="banner7" 
+      fixedImage={fixedBg}
+      overlay={bgImage} 
+      >
+          <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[40%] md:left-[65%]  items-end">
             <div className="max-w-[556px] w-full   p-5   ">
               <p className="header-40 leading-9 md:leading-[60px] text-white font-PoppinsMedium">
                 Grow Savings
               </p>
               <p className=" text-white text-[18px] mt-2 md:leading-[30px] text-20 font-PoppinsLight">
                 Grow your money through individual <br /> and group savings or
-                ajo.
+                aj&#7885;.
               </p>
               <button
                 onClick={() => scrollToDiv("#qrCode")}
@@ -65,27 +60,10 @@ const BannerSeven = () => {
               </button>
             </div>
           </div>
-        </div>
-
-        <Image
-          src="https://res.cloudinary.com/dax11nwlt/image/upload/v1748551063/Grow_Savings_jnohhe.png"
-          alt="Space Port Background"
-          height={isMobile ? "140vh" : "170vh"}
-          fixed
-          darken
-          className=" block md:hidden"
-        ></Image>
-        <Image
-          src="https://res.cloudinary.com/dax11nwlt/image/upload/v1748551063/Grow_Savings_jnohhe.png"
-          alt="Space Port Background"
-          height={isMobile ? "140vh" : "170vh"}
-          fixed
-          darken
-          className="hidden md:block"
-        ></Image>
-      </div>
-    </div>
+      </ParallaxEffect>
   );
 };
 
 export default BannerSeven;
+
+

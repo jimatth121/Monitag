@@ -13,7 +13,9 @@ import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate();
-
+function openInNewTab(url) {
+  window.open(url, '_blank');
+}
   return (
     <div className="   pt-14 font-PoppinsRegular text-[#979797]">
       <div className="px-5 md:px-0 ">
@@ -43,8 +45,14 @@ const Footer = () => {
             </div>
             <div>
               <p className="text-1 font-bold text-[#008cff]">SUPPORT</p>
-              <p className="mt-2 text-[#979797] md:mt-3">+234 700 933 9339</p>
-              <p className="mt-2 text-[#979797] md:mt-3">
+              <p className="mt-1 text-[#979797] ">0916 789 5000</p>
+              <p className="mt-1 text-[#979797] ">0916 789 6000</p>
+              <p className="mt-1 text-[#979797] ">0916 789 7000</p>
+              <p className="mt-1 text-[#979797] ">0916 789 8000</p>
+
+
+
+              <p className="mt-2 text-[#979797] md:mt-2">
                 info@monitagtechnologies.com
               </p>
             </div>
@@ -65,14 +73,13 @@ const Footer = () => {
             </div>
           </div>
           <hr className="my-3" />
-          <div className="flex flex-col md:flex-row md:justify-between gap-2 items-center mt-10">
+          <div className="flex flex-col md:flex-row md:justify-between gap-2 items-center mt-6">
             <div className=" flex justify-center items-center gap-2 lg:gap-5">
-              <img src={Twitter} alt="icon" />
-              <img src={LinkedIn} alt="icon" />
-              <img src={Facebook} alt="icon" />
-              <img src={Instagram} alt="icon" />
-              <img src={Tiktok} alt="icon" />
-              <img src={Threads} alt="icon" />
+              <img onClick={()=>openInNewTab("http://twitter.com/mymonitag")} src={Twitter} alt="icon" className=" cursor-pointer" />
+              <img onClick={()=>openInNewTab("https://www.linkedin.com/company/my-monitag/")}  src={LinkedIn} alt="icon" className=" cursor-pointer" />
+              <img onClick={()=>openInNewTab("http://facebook.com/mymonitag")}  src={Facebook} alt="icon" className=" cursor-pointer" />
+              <img onClick={()=>openInNewTab("http://instagram.com/mymonitag")}  src={Instagram} alt="icon" className=" cursor-pointer" />
+             
             </div>
             <p className="text1 text-[#979797]">©2024 Monitag Technologies.</p>
           </div>

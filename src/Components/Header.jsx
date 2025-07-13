@@ -2,6 +2,8 @@ import { Box, Burger, Drawer, Group, ScrollArea } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./Header.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
+import Logo from "../assets/Logo (2).png";
+
 // import { useEffect } from "react";
 
 export function Header() {
@@ -24,7 +26,7 @@ function openInNewTab(url) {
           <NavLink to={"/"}>
             <img
               onClick={() => navigate("/")}
-              src="https://res.cloudinary.com/dax11nwlt/image/upload/v1737296048/monitagcolorlogo_oqikga.png"
+              src={Logo}
               alt="logo"
               className="logo-width cursor-pointer"
             />
@@ -34,7 +36,7 @@ function openInNewTab(url) {
             {/* Use NavLink for navigation buttons */}
 
             <NavLink
-              onClick={() => scrollToDiv("monitagAndYou")}
+              onClick={() => scrollToDiv("banner2")}
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link} ${classes.linkActive}   `
@@ -45,14 +47,14 @@ function openInNewTab(url) {
             </NavLink>
 
             <NavLink
-              onClick={() => scrollToDiv("questions")}
+              onClick={() => scrollToDiv("banner3")}
               className={({ isActive }) =>
                 isActive
                   ? `${classes.link} ${classes.linkActive}   `
                   : `${classes.link}  font-PoppinsLight`
               }
             >
-              Why Monitag
+              Why Monitag?
             </NavLink>
 
             <NavLink
@@ -88,7 +90,7 @@ function openInNewTab(url) {
         padding="md"
         title={
           <img
-            src="https://res.cloudinary.com/dax11nwlt/image/upload/v1734677320/samples/logo.png"
+            src={Logo}
             alt="logo"
             className="logo-width cursor-pointer"
           />
@@ -103,7 +105,7 @@ function openInNewTab(url) {
       
               onClick={() => {
                 closeDrawer();
-                scrollToDiv("monitagAndYou");
+                scrollToDiv("banner2");
               }}
               className={({ isActive }) =>
                 isActive
@@ -116,7 +118,7 @@ function openInNewTab(url) {
             <NavLink
               onClick={() => {
                 closeDrawer();
-                scrollToDiv("questions");
+                scrollToDiv("banner3");
               }}
               className={({ isActive }) =>
                 isActive
@@ -124,7 +126,7 @@ function openInNewTab(url) {
                   : `${classes.link2}  font-PoppinsLight`
               }
             >
-              How we Help
+                   Why Monitag?
             </NavLink>
 
             <NavLink

@@ -1,12 +1,16 @@
+
 import { useState, useEffect } from "react";
-import { Image } from "../../Components/Image";
-import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { useMediaQuery } from "@mantine/hooks";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import ParallaxEffect from "../../Components/ParallaxEffect";
+
+
 
 const BannerThree = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
-
   const [bgImage, setBgImage] = useState("");
+  const fixedBg =
+    "https://res.cloudinary.com/dax11nwlt/image/upload/v1748551008/Send_Money_dlavde.png";
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,24 +33,18 @@ const BannerThree = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const scrollToDiv = (id) => {
-    const element = document.getElementById(id);
+
+  const scrollToDiv = (href) => {
+    const element = document.querySelector(href);
     element.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
   return (
-    <div>
-      <div className="relative">
-        <div
-          style={{
-            backgroundImage: bgImage,
-            backgroundSize: "cover",
-            backgroundPosition: "top",
-            width: "100%",
-            height: "120vh",
-          }}
-          className="    md:px-0 absolute inset-0 flex md:items-center  z-50"
-        >
-          <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[57%] md:left-[70%]  items-end">
+   <ParallaxEffect id="banner3" 
+      fixedImage={fixedBg}
+      overlay={bgImage} 
+      >
+       <div className="   md:px-0 absolute  flex justify-end    z-50 left-[1%] top-[12%] md:top-[42%] md:left-[70%]  items-end">
             <div className="max-w-[406px] w-full   p-5   ">
               <p className="header-40 md:leading-[60px] text-white font-PoppinsMedium">
                 Send Money
@@ -63,26 +61,7 @@ const BannerThree = () => {
               </button>
             </div>
           </div>
-        </div>
-
-        <Image
-          src="https://res.cloudinary.com/dax11nwlt/image/upload/v1748551008/Send_Money_dlavde.png"
-          alt="Space Port Background"
-          height={isMobile ? "140vh" : "170vh"}
-          fixed
-          darken
-          className=" block md:hidden"
-        ></Image>
-        <Image
-          src="https://res.cloudinary.com/dax11nwlt/image/upload/v1748551008/Send_Money_dlavde.png"
-          alt="Space Port Background"
-          height={isMobile ? "140vh" : "170vh"}
-          fixed
-          darken
-          className="hidden md:block"
-        ></Image>
-      </div>
-    </div>
+      </ParallaxEffect>
   );
 };
 
