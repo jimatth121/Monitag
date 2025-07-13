@@ -49,7 +49,7 @@ const Questions = () => {
           "url('https://res.cloudinary.com/dax11nwlt/image/upload/v1734868194/samples/chair.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "900px",
+        // height: "900px",
       }}
     >
       <div>
@@ -62,7 +62,7 @@ const Questions = () => {
         <Accordion variant="contained">{items}</Accordion>
       </div>
 
-      <div className="mt-20 ">
+      <div className="mt-10 pb-10 ">
         <p className="text-center text-20 font-bold">Got more questions?</p>
       
         <a className="text-1 text-center flex justify-center items-center gap-2" href="mailto:info@monitagtechnologies.com">Send Email to our support team <FaRegArrowAltCircleRight color="gray" /> </a>

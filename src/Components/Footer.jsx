@@ -7,8 +7,6 @@ import Twitter from "../../src/assets/twitter.png";
 import LinkedIn from "../../src/assets/linkedIn.png";
 import Facebook from "../../src/assets/facebook.png";
 import Instagram from "../../src/assets/instagram.png";
-import Threads from "../../src/assets/threads.png";
-import Tiktok from "../../src/assets/tiktok.png";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
@@ -34,7 +32,7 @@ function openInNewTab(url) {
                 }}
                 className="mt-2 text-[#979797] md:mt-3 cursor-pointer"
               >
-                Privacy policy
+                Privacy Policy
               </p>
               <p
                 onClick={() => navigate("termsconditions")}
@@ -74,7 +72,7 @@ function openInNewTab(url) {
           </div>
           <hr className="my-3" />
           <div className="flex flex-col md:flex-row md:justify-between gap-2 items-center mt-6">
-            <div className=" flex justify-center items-center gap-2 lg:gap-5">
+            <div className=" flex justify-center items-center gap-3 lg:gap-5">
               <img onClick={()=>openInNewTab("http://twitter.com/mymonitag")} src={Twitter} alt="icon" className=" cursor-pointer" />
               <img onClick={()=>openInNewTab("https://www.linkedin.com/company/my-monitag/")}  src={LinkedIn} alt="icon" className=" cursor-pointer" />
               <img onClick={()=>openInNewTab("http://facebook.com/mymonitag")}  src={Facebook} alt="icon" className=" cursor-pointer" />

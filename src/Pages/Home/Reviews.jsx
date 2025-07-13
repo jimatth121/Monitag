@@ -13,7 +13,7 @@ const Reviews = () => {
           "url('https://res.cloudinary.com/dax11nwlt/image/upload/v1734868194/samples/chair.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "1335px",
+        // height: "1150px",
       }}
     >
       <div className="pt-24">
@@ -35,7 +35,7 @@ const Reviews = () => {
         />
       </div>
 
-      <div className="mt-16 md:px-48  md:ml-28">
+      <div className="mt-16 md:px-48  pb-10 md:ml-28">
         <Carousel
           withIndicators={isMobile}
           height={300}
