@@ -65,7 +65,7 @@ const Questions = () => {
       <div className="mt-10 pb-10 ">
         <p className="text-center text-20 font-bold">Got more questions?</p>
       
-        <a className="text-1 text-center flex justify-center items-center gap-2" href="mailto:info@monitagtechnologies.com">Send Email to our support team <FaRegArrowAltCircleRight color="gray" /> </a>
+        <a className="text-1 text-center flex justify-center items-center gap-2" href="mailto:info@monitagtechnologies.com">Send an email to our support team <FaRegArrowAltCircleRight color="gray" /> </a>
       </div>
     </div>
   );

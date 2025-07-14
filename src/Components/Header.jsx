@@ -28,7 +28,7 @@ function openInNewTab(url) {
               onClick={() => navigate("/")}
               src={Logo}
               alt="logo"
-              className="logo-width cursor-pointer"
+              className="logo-width cursor-pointer w-[130px] md:w-[200px]"
             />
           </NavLink>
 
@@ -92,7 +92,7 @@ function openInNewTab(url) {
           <img
             src={Logo}
             alt="logo"
-            className="logo-width cursor-pointer"
+            className="logo-width cursor-pointer w-[130px]"
           />
         }
         hiddenFrom="sm"

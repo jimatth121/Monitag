@@ -40,7 +40,7 @@ const Banner1 = () => {
           </p>
           <p className="mt-5 text-white md:leading-[30px]  text-20 md:font-PoppinsLight">
             Make social payments, choose standard or confidential transfers,
-            grow your savings and purchase <br /> e-Vouchers.
+            grow your savings and purchase e-Vouchers.
           </p>
           <button
             onClick={() => scrollToDiv("#qrCode")}
