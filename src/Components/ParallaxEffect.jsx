@@ -1,7 +1,7 @@
 // ParallaxEffect.jsx
 import { Parallax } from 'react-parallax';
 import { motion } from "framer-motion";
-
+import { useMediaQuery } from "@mantine/hooks";
 const ParallaxEffect = ({
   id,
  fixedImage,
@@ -10,13 +10,18 @@ const ParallaxEffect = ({
   strength =500,
   children,
 }) => {
+
+    const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <Parallax
       bgImage={fixedImage} // ✅ Just the image path, no url()
       strength={strength}
       bgImageStyle={{
-        objectFit: "cover",
-        objectPosition: "center",
+        objectFit: "cover",         // fills container nicely
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",    // don't distort
+  backgroundPosition: "center",
+
       }}
     >
         <motion.div
@@ -28,18 +33,16 @@ const ParallaxEffect = ({
       <div
         id={id}
         style={{
-          height,
+          height: isMobile ? "120vh": height,
           position: "relative",
         }}
-        className="flex items-center px-4 md:px-40"
+        className=""
       >
         {/* Optional overlay */}
         {overlay && (
           <div
             style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
+              // position: "absolute",
               height: "100vh",
               width: "100%",
               backgroundImage: `${overlay}`, // ✅ Here use url()
