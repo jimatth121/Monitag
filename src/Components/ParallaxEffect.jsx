@@ -7,7 +7,7 @@ const ParallaxEffect = ({
  fixedImage,
   overlay,
   height = "150vh",
-  strength =500,
+  strength =300,
   children,
 }) => {
 
