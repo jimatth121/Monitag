@@ -34,7 +34,7 @@ const ParallaxEffect = ({
         id={id}
         style={{
           height: isMobile ? "120vh": height,
-          position: "relative",
+          // position: "relative",
         }}
         className=""
       >
@@ -42,7 +42,7 @@ const ParallaxEffect = ({
         {overlay && (
           <div
             style={{
-              // position: "absolute",
+              position: "relative",
               height: "100vh",
               width: "100%",
               backgroundImage: `${overlay}`, // ✅ Here use url()

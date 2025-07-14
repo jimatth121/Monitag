@@ -55,7 +55,7 @@ html {
 }
 
 .header-56 {
-  font-size: clamp(1.75rem, 1.1338rem + 2.6291vw, 3.5rem) !important;
+  font-size: clamp(1.85rem, 2.1338rem + 3.6291vw, 4.5rem) !important;
 }
 
 .m_eae68602:where([data-active]) {

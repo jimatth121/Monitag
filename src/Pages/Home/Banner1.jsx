@@ -34,17 +34,17 @@ const Banner1 = () => {
       fixedImage={fixedBg}
       overlay={bgImage} 
       >
-        <div className="max-w-[400px] mt-[-180%]  md:mt-[10%] text-white z-50 px-4 ">
-          <p className="header-56 leading-8 md:leading-[60px] font-PoppinsMedium">
+        <div className="max-w-[500px] absolute top-[10%]  md:top-[25%] md:left-[100px]   text-white z-50 px-4 ">
+          <p className=" header-56 leading-[50px] md:leading-[80px] font-PoppinsMedium">
             Your Money <br /> Your Way
           </p>
           <p className="mt-5 text-white md:leading-[30px]  text-20 md:font-PoppinsLight">
             Make social payments, choose standard or confidential transfers,
-            grow your savings and purchase e-Vouchers.
+            grow your savings and purchase <br /> e-Vouchers.
           </p>
           <button
             onClick={() => scrollToDiv("#qrCode")}
-            className="mt-5 py-2 md:py-3 px-4 md:px-6 border-white border-[1px] rounded-full flex items-center text-[#7049be] bg-white"
+            className="mt-2 md:mt-5 py-2 md:py-3 px-4 md:px-6 border-white border-[1px] rounded-full flex items-center text-[#7049be] bg-white"
           >
             Download the app
             <span className="pl-2 flex gap-3 justify-center items-center">
