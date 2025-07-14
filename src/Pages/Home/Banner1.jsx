@@ -36,7 +36,7 @@ const Banner1 = () => {
       >
 
 
-        <div className="max-w-[400px] mt-[-80%]  md:mt-[20%] text-white">
+        <div className="max-w-[400px] mt-[-80%]  md:mt-[-20%] text-white z-50">
           <p className="header-56 leading-8 md:leading-[60px] font-PoppinsMedium">
             Your Money <br /> Your Way
           </p>

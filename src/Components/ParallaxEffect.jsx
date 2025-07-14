@@ -1,41 +1,62 @@
-import { useMediaQuery } from "@mantine/hooks";
+// ParallaxEffect.jsx
+import { Parallax } from 'react-parallax';
+import { motion } from "framer-motion";
 
 const ParallaxEffect = ({
   id,
-fixedImage,
+ fixedImage,
   overlay,
   height = "150vh",
+  strength =500,
   children,
 }) => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
-
   return (
-    <div
-      id={id}
-      style={{
-        position: "relative",
-        height,
-        backgroundImage: `url(${fixedImage})`,
-        backgroundAttachment: isMobile ? "scroll" : "fixed",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+    <Parallax
+      bgImage={fixedImage} // ✅ Just the image path, no url()
+      strength={strength}
+      bgImageStyle={{
+        objectFit: "cover",
+        objectPosition: "center",
       }}
     >
-      {/* Optional overlay on top of the fixed background */}
+        <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    viewport={{ once: true }}
+  >
       <div
+        id={id}
         style={{
-          width: "100%",
-          height: "100vh",
-          backgroundImage: overlay ? `${overlay}` : undefined,
-          backgroundSize: "cover",
-          backgroundPosition: "top",
+          height,
+          position: "relative",
         }}
         className="flex items-center px-4 md:px-40"
       >
-        {children}
+        {/* Optional overlay */}
+        {overlay && (
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              height: "100vh",
+              width: "100%",
+              backgroundImage: `${overlay}`, // ✅ Here use url()
+              backgroundSize: "cover",
+              backgroundPosition: "top",
+              zIndex: 1,
+            }}
+          />
+        )}
+
+        {/* Foreground content */}
+      
+          {children}
+        
       </div>
-    </div>
+</motion.div>
+    </Parallax>
   );
 };
 
